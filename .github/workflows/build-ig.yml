@@ -106,7 +106,7 @@ jobs:
       - name: ig.ini erzeugen
         run: |
           ID=$(grep -E '^id:' sushi-config.yaml | head -1 | awk '{print $2}')
-          printf '[IG]\nig = fsh-generated/resources/ImplementationGuide-%s.json\ntemplate = fhir.base.template#current\n' "$ID" > ig.ini
+          printf '[IG]\nig = fsh-generated/resources/ImplementationGuide-%s.json\ntemplate = fhir2.base.template#current\n' "$ID" > ig.ini
           cat ig.ini
 
       - name: IG bauen
