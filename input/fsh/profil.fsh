@@ -46,20 +46,21 @@ Description: "Arzneimittelallergie, wie sie in der Hausarztpraxis erfasst und au
 * clinicalStatus 1..1
 
 // Anforderung 3: Codes aus der Schweizer Allergieliste ($ch-allergy-vs)
-* $ch-allergy-vs
+* code from $ch-allergy-vs (extensible)
 
 // Anforderung 4: Kritikalität (wie gefährlich die Allergie ist)
-// * criticality TODO_Regel
+* criticality 1..1
+* criticality MS
 
 // Anforderung 5: Beginn der Allergie
-// * onset[x] TODO_Regel
+* onset[x] only dateTime or Age
 
 // Anforderung 6: wer die Allergie erfasst hat
-// * recorder TODO_Regel
+* recorder only Reference(CHCorePractitionerRole)
+* recorder 1..1
 
 // Anforderung 7: Reaktionen (die Symptome einer Reaktion stehen in reaction.manifestation)
-// * reaction TODO_Regel
-// * reaction.manifestation TODO_Regel   (nur falls ihr dafür eine Regel braucht)
+* reaction.manifestation from $ch-allergy-manifestation-vs (preferred)
 
 // Invariante (steht schon in invarianten.fsh), nur die // entfernen:
-// * obeys dg-allergy-1
+* obeys dg-allergy-1
