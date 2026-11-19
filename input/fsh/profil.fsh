@@ -39,13 +39,14 @@ Title: "DG Arzneimittelallergie"
 Description: "Arzneimittelallergie, wie sie in der Hausarztpraxis erfasst und auf der Notfallstation gelesen wird."
 
 // Anforderung 1: nur Allergien gegen Arzneimittel
-// * category TODO_Regel
+* category 1..1
+* category = #medication
 
 // Anforderung 2: klinischer Status
-// * clinicalStatus TODO_Regel
+* clinicalStatus 1..1
 
 // Anforderung 3: Codes aus der Schweizer Allergieliste ($ch-allergy-vs)
-// * code TODO_Regel
+* $ch-allergy-vs
 
 // Anforderung 4: Kritikalität (wie gefährlich die Allergie ist)
 // * criticality TODO_Regel
